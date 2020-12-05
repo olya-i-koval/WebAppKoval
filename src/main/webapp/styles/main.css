@@ -1,0 +1,13 @@
+body {
+    background: wheat;
+}
+
+div {
+    border: 2px blue;
+    height: 50px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5em auto auto;
+}
