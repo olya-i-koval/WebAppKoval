@@ -7,7 +7,7 @@
     </style>
 </head>
 <body>
-    <h1>Hello from JSP</h1>
+    <h1>Hello from JSP!!!</h1>
     <%@page import="java.util.Date" %>
     <%@ page import="logic.BusinessLogic" %>
     <%Date now = new Date();%>

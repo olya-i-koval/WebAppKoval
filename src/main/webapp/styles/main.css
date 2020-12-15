@@ -1,9 +1,9 @@
 body {
-    background: wheat;
+    background: fuchsia;
 }
 
 div {
-    border: 2px blue;
+    border: 2px palegreen;
     height: 50px;
     width: 400px;
     display: flex;
