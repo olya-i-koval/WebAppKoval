@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class ConnectionFactory {
-
     public static Connection getConnection() {
 
         Connection connection = null;
@@ -24,7 +23,6 @@ public class ConnectionFactory {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
@@ -33,12 +31,11 @@ public class ConnectionFactory {
         try {
 
             connection = DriverManager.getConnection(
-                    (String)connectionProperties.get("url"),
+                    (String) connectionProperties.get("url"),
                     connectionProperties);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
         return connection;
     }
-}
+    }

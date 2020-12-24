@@ -1,5 +1,7 @@
 package filters;
 
+import dao.UserDao;
+import dao.UserDaoImpl;
 import model.Role;
 
 import javax.servlet.*;
@@ -7,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.util.logging.LogRecord;
 
 public class AuthFilter implements Filter {
     @Override
@@ -25,6 +26,7 @@ public class AuthFilter implements Filter {
 
         final HttpSession session = req.getSession();
         Role role;
+        UserDao userDao = new UserDaoImpl();
 
 
         if (session != null &&
@@ -33,9 +35,32 @@ public class AuthFilter implements Filter {
 
             role = (Role) session.getAttribute("role");
 
+        } else if (userDao.isExist(login, password)) {
+            role = userDao.getRoleByLoginPassword(login, password);
+            req.getSession().setAttribute("password", password);
+            req.getSession().setAttribute("login", login);
+            req.getSession().setAttribute("role", role);
+        } else {
+            role =Role.DEFAULT;
+        }
+        moveToPage(req, res, role);
+    }
+    private void moveToPage(final HttpServletRequest req,
+                            final HttpServletResponse res,
+                            final Role role)
+        throws ServletException, IOException {
+        switch (role) {
+            case ADMIN:
+                req.getRequestDispatcher("/pages/courses_admin.jsp").forward(req,res);
+                break;
+            case USER:
+                req.getRequestDispatcher("/pages/courses_user").forward(req,res);
+                break;
+            case DEFAULT:
+                req.getRequestDispatcher("/courses").forward(req, res);
+
         }
     }
-
     @Override
     public void destroy() {
 

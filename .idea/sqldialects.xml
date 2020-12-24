@@ -2,7 +2,8 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/src/main/java/dao/LecturerDaoImpl.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/dao/StudentDaoIml.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/dao/StudentDaoImpl.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/resources/queries/createTable.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/pages/delete.jsp" dialect="GenericSQL" />
   </component>
 </project>

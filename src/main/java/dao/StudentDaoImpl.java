@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentDaoIml implements StudentDao{
+public class StudentDaoImpl implements StudentDao{
     @Override
     public List<Student> getAllStudents() {
         List<Student> list = new ArrayList<>();
@@ -65,6 +65,11 @@ public class StudentDaoIml implements StudentDao{
             throwables.printStackTrace();
         }
         return 0;
+    }
+
+    @Override
+    public Student getStudentById(int id) {
+        return null;
     }
 
 }

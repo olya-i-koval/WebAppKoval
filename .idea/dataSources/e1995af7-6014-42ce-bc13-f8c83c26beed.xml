@@ -791,7 +791,7 @@ false posixrules
       <ObjectId>13318</ObjectId>
       <Comment>default administrative connection database</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>630</IntrospectionStateNumber>
+      <IntrospectionStateNumber>636</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|16469|16471|1
 sequence|table|16452|16454|1
@@ -868,7 +868,7 @@ UC/10
 </Acl>
       <StateNumber>276</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>631</IntrospectionStateNumber>
+      <IntrospectionStateNumber>637</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="17" parent="2" name="adminpack">

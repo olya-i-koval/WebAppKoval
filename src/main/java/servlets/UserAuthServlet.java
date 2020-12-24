@@ -21,7 +21,7 @@ public class UserAuthServlet extends HttpServlet {
                 session.setAttribute("current_user", username);
                 dispatcher.forward(req, resp);
             }
-            resp.sendRedirect("pages/login.jsp");
+            resp.sendRedirect("pages/logins.jsp");
         } else {
             dispatcher.forward(req, resp);
         }

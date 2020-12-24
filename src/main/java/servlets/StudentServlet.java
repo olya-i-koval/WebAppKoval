@@ -1,7 +1,7 @@
 package servlets;
 
 import dao.StudentDao;
-import dao.StudentDaoIml;
+import dao.StudentDaoImpl;
 
 import model.Student;
 
@@ -20,8 +20,8 @@ public class StudentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Student> studentList;
-        StudentDao studentDao = new StudentDaoIml();
-        int recordsCount = studentDao.getRecordsCount();
+        StudentDao studentDao = new StudentDaoImpl();
+       int recordsCount = studentDao.getRecordsCount();
         int pages = recordsCount / SPP;
         if (recordsCount % SPP != 0)
             pages++;
